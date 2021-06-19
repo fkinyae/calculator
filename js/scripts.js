@@ -1,24 +1,25 @@
-let number1 = parseInt(prompt("Enter number 1: "));
-let number2 = parseInt(prompt("Enter number 2: "));
 
-function add(num1,num2) {
-    return num1 + num2;
-}
+//Business logic/Back-end.
+let add = function(number1, number2) {
+    return number1 + number2;
+   };
+   let subtract = function(number1, number2) {
+    return number1 - number2;
+   };
+   let multiply = function(number1, number2) {
+    return number1 * number2;
+   };
+   let divide = function(number1, number2) {
+    return number1 / number2;
+   };
 
-function subtract(num1,num2) {
-    return num1 - num2;
-}
-
-function multiply(num1,num2) {
-    return num1 * num2;
-}
-
-function divide(num1,num2) {
-    return num1 / num2;
-}
-
-
-//alert(subtract(num1,num2));
-//alert(add(num1,num2));
-//alert(multiply(num1,num2));
-
+   //User Interface Logic.
+   $(document).ready(function(){
+       $("form#add").submit(function(event){
+           event.preventDefault();
+            let number1 = parseInt($("#add1").val());
+            let number2 = parseInt($("#add2").val()); 
+            let result = add(number1, number2);
+            $("#output").text(result);
+        });
+});
